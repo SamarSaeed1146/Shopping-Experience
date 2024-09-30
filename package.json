@@ -18,14 +18,19 @@
     "@wix/reviews": "^1.0.37",
     "@wix/sdk": "^1.13.0",
     "@wix/stores": "^1.0.233",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "js-cookie": "^3.0.5",
     "ky": "^1.7.2",
+    "lucide-react": "^0.446.0",
     "next": "15.0.0-rc.0",
     "next-themes": "^0.3.0",
     "react": "19.0.0-rc-f994737d14-20240522",
     "react-dom": "19.0.0-rc-f994737d14-20240522",
-    "react-medium-image-zoom": "^5.2.10"
+    "react-medium-image-zoom": "^5.2.10",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
