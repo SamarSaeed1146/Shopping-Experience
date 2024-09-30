@@ -13,3 +13,12 @@ npm i -D @tailwindcss/typography @tanstack/react-query-devtools @tanstack/eslint
     ``` 
     This is just for nextjs 15 release Command if you are using relese next js use it,
     Otherwise don't use it.
+
+## Shadcn UI Installation After Above Steps:
+```
+npx shadcn@latest init
+```
+```
+npx shadcn@latest init -d
+
+```
