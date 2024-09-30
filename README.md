@@ -16,7 +16,7 @@ npm i -D @tailwindcss/typography @tanstack/react-query-devtools @tanstack/eslint
 --legacy-peer-deps
 ```
 
-##### This is just for nextjs 15 release Command if you are using relese next js use it, Otherwise don't use it.
+##### This is just for Next js 15 release command if you are using relese version of Next js use it, Otherwise don't use it.
 
 ## Shadcn UI Installation After Above Steps:
 
