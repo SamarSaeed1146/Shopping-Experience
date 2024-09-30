@@ -28,3 +28,7 @@ npx shadcn@latest init
 npx shadcn@latest init -d
 
 ```
+
+```
+npx shadcn@latest add accordion button checkbox dialog dropdown-menu form input label navigation-menu pagination select sheet skeleton textarea toast tooltip
+```
