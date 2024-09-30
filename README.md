@@ -10,13 +10,13 @@ npm i @tanstack/react-query @wix/sdk @wix/ecom @wix/media @wix/members @wix/redi
 npm i -D @tailwindcss/typography @tanstack/react-query-devtools @tanstack/eslint-plugin-query @types/js-cookie prettier eslint-config-prettier prettier-plugin-tailwindcss --legacy-peer-deps
 ```
 
-#### Note
+### Note
 
 ```
 --legacy-peer-deps
 ```
 
-##### This is just for Next js 15 release command if you are using relese version of Next js use it, Otherwise don't use it.
+#### This is just for Next js 15 release command if you are using relese version of Next js use it, Otherwise don't use it.
 
 ## Shadcn UI Installation After Above Steps:
 
