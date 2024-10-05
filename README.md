@@ -32,3 +32,23 @@ npx shadcn@latest init -d
 ```
 npx shadcn@latest add accordion button checkbox dialog dropdown-menu form input label navigation-menu pagination select sheet skeleton textarea toast tooltip
 ```
+
+# Make a file : prettier.config.js
+
+```
+module.exports = {
+  plugins: ["prettier-plugin-tailwindcss"],
+};
+```
+
+## Add this code to eslintrc.json
+
+```
+{
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
+  ]
+}
+```
