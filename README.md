@@ -71,3 +71,4 @@ export const env = createEnv({
   },
 });
 ```
+https://manage.wix.com/dashboard/5cf8344a-0776-4dab-a125-19b385570b90/oauth-apps-settings
