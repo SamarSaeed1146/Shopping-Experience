@@ -1,7 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import { products } from "@wix/stores";
 import Link from "next/link";
-import { media as wixMedia } from "@wix/sdk";
+import WixImage from "./WixImage";
 
 interface ProductProps {
   product: products.Product;
@@ -10,18 +9,19 @@ interface ProductProps {
 export default function Product({ product }: ProductProps) {
   const mainImage = product.media?.mainMedia?.image;
 
-  const resizedImageUrl = mainImage?.url
-    ? wixMedia.getScaledToFillImageUrl(mainImage.url, 700, 700, {})
-    : null;
-
   return (
     <Link href={`/product/${product.slug}`} className="h-full border">
-      <div className="overflow-hidden">
-        <img
-          src={resizedImageUrl || "/placeholder.png"}
-          alt={mainImage?.altText || ""}
+      <div className="relative overflow-hidden">
+        <WixImage
+          width={700}
+          height={700}
+          mediaIdentifier={mainImage?.url}
+          alt={mainImage?.altText}
           className="transform transition-transform duration-300 hover:scale-110"
         />
+        <div className="absolute">
+          
+        </div>
       </div>
       <div className="space-y-3 p-3">
         <h3 className="text-lg font-bold">{product.name}</h3>
