@@ -6,23 +6,39 @@ import logo from "@/public/shopping-logo.png";
 
 const Footer = () => {
   const socialMedia = [
-    { name: "Facebook", url: "#", icon: <Facebook /> },
-    { name: "Instagram", url: "#", icon: <Instagram /> },
+    {
+      name: "Facebook",
+      url: "https://www.facebook.com/profile.php?id=100012450646266",
+      icon: <Facebook />,
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/samarsaeed1000/",
+      icon: <Instagram />,
+    },
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/muhammad-samar-saeed-ab7347324/",
       icon: <Linkedin />,
     },
-    { name: "YouTube", url: "#", icon: <Youtube /> },
-    { name: "GitHub", url: "#", icon: <Github /> },
+    {
+      name: "YouTube",
+      url: "https://www.youtube.com/@samarsaeed2006",
+      icon: <Youtube />,
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/SamarSaeed1146",
+      icon: <Github />,
+    },
   ];
 
   return (
     <footer className="mt-auto bg-gray-100 pb-8 pt-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div className="text-center md:text-left">
-            <div className="mb-4 flex justify-center items-center gap-4 md:justify-start">
+          <div className="text-center">
+            <div className="mb-4 flex items-center justify-center gap-4">
               <Image
                 src={logo}
                 alt="Company Logo"
@@ -34,7 +50,7 @@ const Footer = () => {
                 Shopping Experience
               </span>
             </div>
-            <p>
+            <p className="text-md font-medium text-gray-700">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
               ipsum dolor, sit amet consectetur adipisicing elit.
             </p>
@@ -47,7 +63,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/about"
-                  className="transition-colors hover:text-white"
+                  className="text-md font-medium text-gray-700 transition-colors hover:text-gray-400"
                 >
                   About Us
                 </a>
@@ -55,7 +71,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/contact"
-                  className="transition-colors hover:text-white"
+                  className="text-md font-medium text-gray-700 transition-colors hover:text-gray-400"
                 >
                   Contact
                 </a>
@@ -63,7 +79,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/privacy"
-                  className="transition-colors hover:text-white"
+                  className="text-md font-medium text-gray-700 transition-colors hover:text-gray-400"
                 >
                   Privacy Policy
                 </a>
@@ -72,14 +88,14 @@ const Footer = () => {
           </div>
 
           {/* Social Media with Lucide Icons */}
-          <div className="text-center md:text-right">
+          <div className="text-center md:justify-end">
             <h3 className="mb-4 text-xl font-bold">Follow Us</h3>
-            <div className="flex justify-center space-x-4 md:justify-end">
+            <div className="flex justify-center space-x-4">
               {socialMedia.map((platform) => (
                 <a
                   key={platform.name}
                   href={platform.url}
-                  className="strokeWidth: 2 h-8 w-8 text-blue-500 hover:animate-bounce hover:text-blue-400"
+                  className="strokeWidth: 2 h-8 w-8 text-blue-500 hover:animate-bounce hover:text-blue-300"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={platform.name}
@@ -95,7 +111,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 border-t border-gray-700 pt-6 text-center">
+        <div className="text-md mt-8 border-t border-gray-700 pt-6 text-center font-medium text-gray-700">
           <p>
             &copy; {new Date().getFullYear()} My Company. All rights reserved.
           </p>
