@@ -40,7 +40,7 @@ export async function queryProducts({
   return await query.find();
 }
 
-export async function getProductById(slug: string) {
+export async function getProductBySlug(slug: string) {
   const wixClient = getWixClient();
   const { items } = await wixClient.products
     .queryProducts()
