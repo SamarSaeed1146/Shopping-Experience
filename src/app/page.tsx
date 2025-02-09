@@ -5,9 +5,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { delay } from "../lib/utils";
 import { Suspense } from "react";
-import { getWixClient } from "../lib/wix-client.base";
 import Product from "../components/Product";
 import { Skeleton } from "../components/ui/skeleton";
+import { getCollectionBySlug } from "../wix-api/collection";
+import { queryProducts } from "../wix-api/product";
 
 export default function Home() {
   return (
@@ -46,20 +47,15 @@ export default function Home() {
 async function FeaturedProducts() {
   await delay(1000);
 
-  const wixClient = getWixClient();
-
-  const { collection } =
-    await wixClient.collections.getCollectionBySlug("featured-products");
+  const collection = await getCollectionBySlug("featured-products");
 
   if (!collection?._id) {
     return null;
   }
 
-  const featuredProducts = await wixClient.products
-    .queryProducts()
-    .hasSome("collectionIds", [collection._id])
-    .descending("lastUpdated")
-    .find();
+  const featuredProducts = await queryProducts({
+    collectionIds: collection._id,
+  });
 
   if (!featuredProducts.items.length) {
     return null;
@@ -79,7 +75,7 @@ async function FeaturedProducts() {
 
 function LoadingSkeleton() {
   return (
-    <div className="flex grid-cols-2 flex-col gap-5 sm:grid md:grid-cols-3 lg:grid-cols-4 pt-12">
+    <div className="flex grid-cols-2 flex-col gap-5 pt-12 sm:grid md:grid-cols-3 lg:grid-cols-4">
       {Array.from({ length: 8 }).map((_, i) => (
         <Skeleton key={i} className="h-[26rem] w-full" />
       ))}
