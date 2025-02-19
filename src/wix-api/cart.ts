@@ -1,4 +1,6 @@
+import { products } from "@wix/stores";
 import { getWixClient } from "../lib/wix-client.base";
+import { findVariant } from "../lib/utils";
 
 export async function getCart() {
     const wixClient = getWixClient();
@@ -13,5 +15,30 @@ export async function getCart() {
         throw error;
       }
     }
+  }
+  interface AddToCartValues {
+    product: products.Product,
+    selectedOptions: Record<string,string>,
+    quantity: number
+  }
+
+  export async function addToCart({
+    product,
+    selectedOptions,
+    quantity
+  }: AddToCartValues) {
+    const wixClient = getWixClient()
+
+    const selectedVariant = findVariant(product, selectedOptions)
+
+    return wixClient.currentCart.addToCurrentCart({
+      lineItems: [
+        {
+          catalogReference: {
+            appId:
+          }
+        }
+      ]
+    })
   }
    
